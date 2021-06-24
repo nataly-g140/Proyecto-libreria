@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col col-md-6 offset-md-3">
+          <div class="card">
+            <h5 class="card-header">Iniciar sesión</h5>
+            <div class="card-body">
+              <!-- <form onsubmit="handleSubmit(event)"> -->
+              <form onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="email"
+                    id="userEmail"
+                    onchange="handleChange(event)"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Contraseña</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    id="userPassword"
+                    onchange="handleChange(event)"
+                  />
+                </div>
+                <button
+                  class="btn btn-info float-right"
+                  id="btnSubmit"
+                  type="submit"
+                >
+                  Entrar
+                </button>
+                <p>
+                  Si aún no tiene cuenta regístrese desde
+                  <a href="/registro.html">aquí</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/login.js"></script>
+    <script>
+      localStorage.clear();
+      let usuarios = [
+        {
+          id: 1,
+          email:"nathy0239@gmail.com",
+          password: "1234567",
+          nombre: "Nataly Gutierrez",
+          area: "Sistemas",
+          imagen:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_gSfpMjPSlwoECBbnZFHOazzVlL6GaiQXyg&usqp=CAU",
+        },
+        {
+          id: 2,
+          email: "admin@gmail.com",
+          password: "123456",
+          nombre: "Admin",
+          area: "Administración",
+          imagen:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYMa62z19XfXnODX6-HD_08TAO_Dj0USyRoh8ewedittk8iNv4P_rdMS4wQs3IdWRTDnM&usqp=CAU",
+        },
+      ];
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+      setTimeout(function () {
+        location.replace("/login.html");
+      }, 2000);
+    </script>
+  </body>
+</html>
